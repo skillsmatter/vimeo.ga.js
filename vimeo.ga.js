@@ -91,7 +91,7 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
           vimeoGAJS.sendEvent(iframeEl, 'Started video');
           vimeoGAJS.eventMarker[iframeId].videoPlayed = true; // Avoid subsequent play trackings
         } else if (!vimeoGAJS.eventMarker[iframeId].videoResumed && vimeoGAJS.eventMarker[iframeId].videoPaused) {
-          vimeoGAJS.sendEvent(iframeEl, 'Resumed video');
+          // vimeoGAJS.sendEvent(iframeEl, 'Resumed video');
           vimeoGAJS.eventMarker[iframeId].videoResumed = true; // Avoid subsequent resume trackings
         }
         break;
@@ -139,8 +139,8 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
     onReady :function() {
       $.each(vimeoGAJS.iframes, function(index, iframe) {
         vimeoGAJS.post('addEventListener', 'play', iframe);
-        vimeoGAJS.post('addEventListener', 'seek', iframe);
-        vimeoGAJS.post('addEventListener', 'pause', iframe);
+        // vimeoGAJS.post('addEventListener', 'seek', iframe);
+        // vimeoGAJS.post('addEventListener', 'pause', iframe);
         vimeoGAJS.post('addEventListener', 'finish', iframe);
         vimeoGAJS.post('addEventListener', 'playProgress', iframe);
       });
