@@ -2,6 +2,9 @@
  * vimeo.ga.js | v0.6
  * Based on modifications by LukasBeaton (https://github.com/LukasBeaton/vimeo.ga.js)
  * Copyright (c) 2015 Sander Heilbron (http://www.sanderheilbron.nl)
+ * 
+ * Additional modifications by Skills Matter https://skillsmatter.com/
+ * 
  * MIT licensed
  */
 
