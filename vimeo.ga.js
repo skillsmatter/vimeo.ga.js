@@ -13,6 +13,8 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
     iframes : [],
     gaTracker : undefined,
     eventMarker : {},
+    eventName : 'Skillscast',
+    eventCategory : 'Skillscast',
 
     init: function () {
       vimeoGAJS.iframes = $('iframe');
@@ -189,15 +191,15 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
 
       switch (vimeoGAJS.gaTracker) {
       case 'gtm':
-        dataLayer.push({'event': 'Vimeo', 'eventCategory': 'Vimeo', 'eventAction': action, 'eventLabel': label, 'eventValue': undefined, 'eventNonInteraction': (bounce) ? false : true });
+        dataLayer.push({'event': vimeoGAJS.eventName, 'eventCategory': vimeoGAJS.eventCategory, 'eventAction': action, 'eventLabel': label, 'eventValue': undefined, 'eventNonInteraction': (bounce) ? false : true });
         break;
 
       case 'ua':
-        ga('send', 'event', 'Vimeo', action, label, undefined, {'nonInteraction': (bounce) ? 0 : 1});
+        ga('send', 'event', vimeoGAJS.eventName, action, label, undefined, {'nonInteraction': (bounce) ? 0 : 1});
         break;
 
       case 'ga':
-        _gaq.push(['_trackEvent', 'Vimeo', action, label, undefined, (bounce) ? false : true]);
+        _gaq.push(['_trackEvent', vimeoGAJS.eventName, action, label, undefined, (bounce) ? false : true]);
         break;
       }
     }
