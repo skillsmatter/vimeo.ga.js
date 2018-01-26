@@ -46,10 +46,10 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
         //console.info('Classic Analytics');
       }
 
-      if (typeof dataLayer !== "undefined" && typeof dataLayer.push === "function") {
-        vimeoGAJS.gaTracker = 'gtm'; // Google Tag Manager (dataLayer)
-        //console.info('Google Tag Manager');
-      }
+      // if (typeof dataLayer !== "undefined" && typeof dataLayer.push === "function") {
+      //   vimeoGAJS.gaTracker = 'gtm'; // Google Tag Manager (dataLayer)
+      //   //console.info('Google Tag Manager');
+      // }
 
       // Listen for messages from the player
       if (window.addEventListener) {
